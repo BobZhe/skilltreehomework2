@@ -104,7 +104,7 @@ namespace ShoppingCar
                     ref booksCountDealArray,
                     minvalue);
 
-                //zeroAmount = FindZeroAmountInDealArray(booksCountDealArray);
+                zeroAmount = FindZeroAmountInDealArray(booksCountDealArray);
             }
 
             return 1;  
