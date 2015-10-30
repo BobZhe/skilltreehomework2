@@ -174,11 +174,11 @@ namespace ShoppingCar
         private double CalculateTheDiscounts()
         {
             double discounts = new double();
-            discounts = (_BooksGroupedAmount[0] * 0    * +//1 +
-                         _BooksGroupedAmount[1] * 0.05 * +//2 +
-                         _BooksGroupedAmount[2] * 0.1  * +//3 +
-                         _BooksGroupedAmount[3] * 0.2  * +//4 +
-                         _BooksGroupedAmount[4] * 0.25  ) * _price;
+            discounts = (_BooksGroupedAmount[0] * 0    * 1 +
+                         _BooksGroupedAmount[1] * 0.05 * 2 +
+                         _BooksGroupedAmount[2] * 0.1  * 3 +
+                         _BooksGroupedAmount[3] * 0.2  * 4 +
+                         _BooksGroupedAmount[4] * 0.25 * 5 ) * _price;
 
             return discounts;
         }

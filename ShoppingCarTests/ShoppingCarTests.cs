@@ -123,20 +123,5 @@ namespace ShoppingCar.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod()]
-        public void PaytheBillTest_Buy_V1x100_Book()
-        {
-            //arrange
-            CShoppingCar target = new CShoppingCar("HarryPotter");
-            target.SetTheGoodsNumber(100, 2, 0, 0, 0);
-            double actual = new double();
-            int expected = 10180;
-
-            //act
-            actual = target.PayTheBill();
-
-            //assert
-            Assert.AreEqual(expected, actual);
-        }
     }
 }
