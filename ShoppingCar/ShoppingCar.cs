@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace ShoppingCar
 {
-    //interface IPurchaseGoods
-    //{
-    //    void SetTheGoodsNumber(
-    //        int book1Count,
-    //        int book2Count,
-    //        int book3Count,
-    //        int book4Count,
-    //        int book5Count);
+    interface IPurchaseGoods
+    {
+        void SetTheGoodsNumber(
+            int book1Count,
+            int book2Count,
+            int book3Count,
+            int book4Count,
+            int book5Count);
+        double PayTheBill();
+    }
 
-    //    double PayTheBill();
-    //}
-
-    internal class CHarryPotter
+    internal class CHarryPotter : IPurchaseGoods
     {
         private int _price        = 100;
         private int[] _bookCounts = new int[5];
@@ -105,7 +104,7 @@ namespace ShoppingCar
                     ref booksCountDealArray,
                     minvalue);
 
-                zeroAmount = FindZeroAmountInDealArray(booksCountDealArray);
+                //zeroAmount = FindZeroAmountInDealArray(booksCountDealArray);
             }
 
             return 1;  
@@ -175,11 +174,11 @@ namespace ShoppingCar
         private double CalculateTheDiscounts()
         {
             double discounts = new double();
-            discounts = (_BooksGroupedAmount[0] * 0    * 1 +
-                         _BooksGroupedAmount[1] * 0.05 * 2 +
-                         _BooksGroupedAmount[2] * 0.1  * 3 +
-                         _BooksGroupedAmount[3] * 0.2  * 4 +
-                         _BooksGroupedAmount[4] * 0.25 * 5 ) * _price;
+            discounts = (_BooksGroupedAmount[0] * 0    * +//1 +
+                         _BooksGroupedAmount[1] * 0.05 * +//2 +
+                         _BooksGroupedAmount[2] * 0.1  * +//3 +
+                         _BooksGroupedAmount[3] * 0.2  * +//4 +
+                         _BooksGroupedAmount[4] * 0.25  ) * _price;
 
             return discounts;
         }
@@ -187,7 +186,7 @@ namespace ShoppingCar
 
     public class CShoppingCar
     {
-        CHarryPotter PurchaseGoods = null;
+        IPurchaseGoods PurchaseGoods = null;
 
         public CShoppingCar(string MerchandiseName)
         {
